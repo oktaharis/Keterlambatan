@@ -30,7 +30,7 @@
 
     @if (!isset($searchQuery))
     @isset($grup)
-    <table class="table" style="margin-top: 50px; text-align: start;">
+    <table class="table table-striped table-bordered table-hover" style="margin-top: 50px; text-align: start;">
         <thead>
             <tr>
                 <th>No</th>
@@ -58,7 +58,7 @@
                     @if ($item->student->lates->count() >= 3)
                     <form action="{{ route('admin.lates.eksport.pdf', $item->student_id) }}" method="post">
                         @csrf
-                        <button type="submit" class="btn btn-success text-start"><i class="fas fa-file-pdf"></i> Cetak
+                        <button type="submit" class="btn btn-danger text-start"><i class="fas fa-file-pdf"></i> Cetak
                             PDF</button>
                     </form>
                     @endif

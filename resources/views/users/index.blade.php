@@ -2,6 +2,7 @@
 
 @section('content')
     <div id="msg-success"></div>
+    <h1 class="mb-1">Data User</h1>
 
 @if (Session::get('success'))
     <div class="alert alert-success"> {{ Session::get('success') }}</div>

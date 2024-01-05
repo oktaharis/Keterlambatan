@@ -9,7 +9,7 @@
 @if(Session::get('deleted'))
     <div class="alert alert-warning">{{ Session::get('deleted') }}</div>
 @endif --}}
-
+<h1 class="mb-1">Data Rombel</h1>
 <div class="d-flex justify-content-end mb-3">
     <a class="btn btn-secondary" href="{{ route('rombels.create') }}">Tambah</a>
 </div>

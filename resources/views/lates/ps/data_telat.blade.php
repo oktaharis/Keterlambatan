@@ -2,7 +2,7 @@
 
 @section('content')
     <h2>Data Keterlambatan</h2>
-    <p><a href="{{ route('homePs') }}">Dashboard</a> / Data Keterlambatan</p>
+    <p><a href="{{ route('homePs') }}" style="color: #df4adf;">Dashboard</a> / Data Keterlambatan</p>
     <div class="my-5">
         <a href="{{ route('ps.lates.eksport.excel') }}" class="btn btn-info text-white"><i class="fas fa-file-excel"></i> Export
             Excel</a>

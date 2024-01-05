@@ -2,7 +2,7 @@
 
 @section('content')
     <h2>Data Siswa</h2>
-    <p><a href="">Dashboard</a> / Data Siswa</p>
+    <p><a href="{{ route('homePs') }}" style="color: #df4adf;">Dashboard</a> / Data Siswa</p>
     <br>
     <div class="d-md-flex justify-content-between align-items-center mt-3">
         <form action="{{ route('ps.student.indexPs') }}" method="get" class="d-flex">
@@ -15,7 +15,7 @@
             <div class="form-control form-control text-center">
                 entries per page
             </div>
-        </form>
+        </form> 
         <form action="{{ route('ps.student.indexPs') }}" method="get" class="d-flex mt-3">
             <input type="text" name="search" class="form-control me-2" placeholder="Cari Siswa"
                 value="{{ $search }}">

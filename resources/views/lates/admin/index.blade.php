@@ -54,7 +54,7 @@
                   <input type="text" name="query" class="form-control" placeholder="Cari Detail Keterlambatan">
                   <button type="submit" class="btn btn-info text-white">Search</button>
                 </form>
-                <button type="submit" class="btn btn-danger text-white mx-1"><a href="{{ route('admin.lates.export.excel') }}" style="text-decoration: none; color:aliceblue;">Export</a></button>
+                <button type="submit" class="btn btn-success text-white mx-1"><a href="{{ route('admin.lates.export.excel') }}" style="text-decoration: none; color:aliceblue;">Export</a></button>
                 <a href="{{ route('admin.lates.create') }}" class="btn btn-info text-white ">Tambah</a>
               </div>
             @endif
@@ -109,12 +109,12 @@
                             <td>
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                     <form action="{{ route('admin.lates.edit', $item['id']) }}" method="">
-                                        <button type="submit" class="btn btn-info text-white m-2" style="background: purple;">Edit</button>
+                                        <button type="submit" class="btn btn-info text-white m-2" style="background: #913391;">Edit</button>
                                     </form>
                                     <form action="{{ route('admin.lates.delete', $item['id']) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-info text-white m-2" style="background: purple">Hapus</button>
+                                        <button type="submit" class="btn btn-info text-white m-2" style="background: #913391">Hapus</button>
                                     </form>
                                 </div>
                             </td>
@@ -162,13 +162,13 @@
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                     <form action="{{ route('admin.lates.edit', $item['id']) }}" method="">
                                         <button type="submit" class="btn btn-info text-white m-2"
-                                            style="background: purple;">Edit</button>
+                                            style="background: #913391;">Edit</button>
                                     </form>
                                     <form action="{{ route('admin.lates.delete', $item['id']) }}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-info text-white m-2"
-                                            style="background: purple">Hapus</button>
+                                            style="background: #913391">Hapus</button>
                                     </form>
                                 </div>
                             </td>

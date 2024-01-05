@@ -29,9 +29,9 @@
                 <!-- Sidebar navigation -->
                 <ul class="sidebar-nav">
                     <!-- Dashboard link -->
-                    <img src="{{ asset('image/profile.jpg') }}" class="img-thumbnail p-3 rounded-5">
-                    <li class="sidebar-item">
-                        <hr>
+                    {{-- <img src="{{ asset('image/profile.jpg') }}" class="img-thumbnail p-1 rounded-5" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);width: 50px;
+                    height: 50px;">
+                    <li class="sidebar-item"> --}}
                         <a href="{{ Auth::user()->role === 'admin' ? route('home') : route('homePs') }}" class="sidebar-link">
                             <i class="fa-solid fa-house"></i> Dashboard
                         </a>
@@ -108,8 +108,10 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-user me-2"></i> @if(Auth::check())
+                                 @if(Auth::check())
                                 {{ Auth::user()->name }}
+                                <img src="{{ asset('image/profile.jpg') }}" class="img-thumbnail p-1 rounded-5" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);width: 30px;
+                    height: 30px;">
                                 @else
                                 User not authenticated
                                 @endif

@@ -353,7 +353,7 @@
             <i class="fab fa-linkedin-in"></i>
           </a>
         </div>
-        <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a></p>
+        <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Kontak Saya</a></p>
       </form>
       <form action="" class="sign-up-form">
         <h2 class="title">Sign up</h2>
@@ -367,7 +367,7 @@
         </div>
         <div class="input-field">
           <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Password">
+          <input type="area" placeholder="Kendala/ Masalah">
         </div>
         <input type="submit" value="Sign up" class="btn">
         <p class="social-text">Or Sign in with social platform</p>
@@ -391,8 +391,8 @@
     <div class="panels-container">
       <div class="panel left-panel">
         <div class="content">
-          <h3>Member of Brand?</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium dolor, eos incidunt minima iure?
+          <h3>Isi terlebih dahulu form di samping</h3>
+          <p>Kemudian sampaikan masalah atau kendala yang terjadi dan saat melakukan apa
           </p>
           <button class="btn" id="sign-in-btn">Sign in</button>
         </div>
@@ -400,10 +400,10 @@
       </div>
       <div class="panel right-panel">
         <div class="content">
-          <h3>New to Brand?</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium dolor, eos incidunt minima iure?
+          <h3>Silahkan isi form terlebih dahulu☺️</h3>
+          <p>Apabila mengalami kendala silahkan kontak admin di sini ..
           </p>
-          <button class="btn" id="sign-up-btn">Sign up</button>
+          <button class="btn" id="sign-up-btn"> Kontak </button>
         </div>
         <img src="signup.svg" alt="" class="image">
       </div>

@@ -12,13 +12,10 @@ use Illuminate\Support\Facades\Auth;
 
 class StudentsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index()
     {
         $student = Students::all();
-        // $student = 
         return view('students.index', compact('student'));
     }
     // public function data(){
@@ -49,9 +46,7 @@ class StudentsController extends Controller
         return view('students.ps.data_user_ps', compact('students', 'perPage', 'search'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    
     public function create()
     {
         // Mengganti variabel $rombel_id dan $rayon_id dengan data yang sesuai
@@ -61,12 +56,9 @@ class StudentsController extends Controller
     }
     
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    
     public function store(Request $request)
     {
-
         $request->validate([
             'nis' => 'required',
             'name' => 'required',
@@ -86,17 +78,13 @@ class StudentsController extends Controller
     }
 
 
-    /**
-     * Display the specified resource.
-     */
+    
     public function show(students $students)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+    
     public function edit($id)
     {
         $students = Students::find($id);
@@ -107,9 +95,7 @@ class StudentsController extends Controller
     }
     
 
-    /**
-     * Update the specified resource in storage.
-     */
+    
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -130,9 +116,7 @@ class StudentsController extends Controller
         return redirect()->route('students.index')->with('success', 'Berhasil menambahkan data student!');
     }
 
-    /**
-     * Delete the specified resource.
-     */
+    
     public function delete($id)
     {
         $student = Students::findOrFail($id);
