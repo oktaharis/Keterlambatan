@@ -22,7 +22,14 @@
         <div class="mb-3 row">
             <label for="name" class="col-sm-2 col-form-label">Pembimbing Siswa :</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="user_id" name="user_id" value="{{ $rayon->user_id }}">
+                <select name="user_id" id="user_id" class="form-control">
+                    <option hidden disabled selected>Pilih Pembimbing Siswa</option>
+                    @foreach ($users as $user)
+                        <option value="{{ $user->id }}" {{ $user->id == $rayon->user_id ? 'selected' : '' }}>
+                            {{ $user->name }}
+                        </option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <button type="submit" class="btn btn-primary mt-3">Ubah Data</button>

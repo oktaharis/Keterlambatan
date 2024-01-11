@@ -34,10 +34,11 @@
             @forelse ($student as $item)
                 <tr>
                     <td>{{ $loop->index + 1 }}</td>
-                    <td>{{ $item->nis }}</td>
-                    <td>{{ $item->name }}</td>
-                    <td>{{ $item->rombels->rombel }}</td>
-                    <td>{{ $item->rayons->rayon }}</td>
+                        <td>{{ $item['nis'] }}</td>
+                        <td>{{ $item['name'] }}</td>
+                        <td>{{ $item->rombels ? $item->rombels->rombel : 'N/A' }}</td>
+
+                        <td>{{ $item->rayons ? $item->rayons->rayon : 'N/A' }}</td>
                     @if (Auth::check() && Auth::user()->role == "admin")
                     <td class="d-flex justify-content-center">
                         <a href="{{ route('students.edit', $item->id) }}" class="btn btn-primary me-3">Edit</a>

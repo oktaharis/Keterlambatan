@@ -60,8 +60,8 @@ public function store(Request $request)
     public function edit($id)
     {
         $rayon = Rayons::find($id);
-        // ...
-        return view('rayons.edit', compact('rayon'));
+        $users = User::all()->where('role', 'ps');
+        return view('rayons.edit', compact('rayon', 'users'));
     }
 
 

@@ -13,10 +13,30 @@ use Illuminate\Support\Facades\Auth;
 class StudentsController extends Controller
 {
     
-    public function index()
+    public function index(Request $request)
     {
+        $search = $request->input('search');
+
+        // Mendapatkan nilai perPage dari formulir atau menggunakan nilai default (5)
+        $perPage = $request->input('perPage', 5);
+
+        $students = Students::with(['rayons', 'rombels'])
+            ->where(function ($query) use ($search) {
+                $query->where('nis', 'LIKE', '%' . $search . '%')
+                    ->orWhere('name', 'LIKE', '%' . $search . '%')
+                    ->orWhereHas('rayons', function ($rayonQuery) use ($search) {
+                        $rayonQuery->where('rayon', 'LIKE', '%' . $search . '%');
+                    })
+                    ->orWhereHas('rombels', function ($rombelQuery) use ($search) {
+                        $rombelQuery->where('rombel', 'LIKE', '%' . $search . '%');
+                    });
+            })
+            ->orderBy('created_at', 'ASC')
+            ->simplePaginate($perPage);
         $student = Students::all();
-        return view('students.index', compact('student'));
+        $rayon = Rayons::all();
+        $rombel = Rombels::all();
+        return view('students.index', compact('student', 'rayon', 'rombel', 'students', 'search', 'perPage'));
     }
     // public function data(){
     //     $rayonId = rayons::where('user_id', Auth::user()->id)->pluck('id');
